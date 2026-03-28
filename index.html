@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YuHsiu Dev · Frontend Developer 個人網站</title>
-  <meta name="description" content="這是一個前端工程師的個人品牌網站，介紹背景、技能、作品集與聯絡方式，展現專業與開發能力。">
+  <title>永遠的咪咪 · 紀念我們最調皮的小天使</title>
+  <meta name="description" content="這是一個關於米克斯貓咪「咪咪」的紀念網站。紀錄她可愛的身影、成為五位母親的堅強，以及她那愛咬人卻又讓人無法自拔的獨特個性。">
 
   <style>
     /* CSS:BASE-START */
@@ -16,10 +16,10 @@
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", system-ui, sans-serif;
       line-height: 1.6;
-      background-color: #0f172a;
-      color: #e5e7eb;
+      background-color: #1a1512; /* 深咖啡色調，比原來的藍黑色更溫暖 */
+      color: #f3f4f6;
     }
 
     .page {
@@ -29,7 +29,7 @@
 
     .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 1.5rem 1rem;
     }
@@ -38,32 +38,39 @@
       max-width: 100%;
       height: auto;
       display: block;
+      border-radius: 12px;
     }
 
     a {
-      color: #38bdf8;
+      color: #fbbf24; /* 暖金色，象徵貓咪的眼睛 */
       text-decoration: none;
+      transition: 0.3s;
     }
 
     a:hover {
+      color: #f59e0b;
       text-decoration: underline;
     }
 
     .section {
-      padding: 3rem 0;
+      padding: 4rem 0;
     }
 
     .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #fbbf24;
+      border-left: 4px solid #fbbf24;
+      padding-left: 1rem;
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      background-color: #020617;
-      border-bottom: 1px solid #1e293b;
+      background-color: rgba(26, 21, 18, 0.95);
+      border-bottom: 1px solid #3d3028;
       z-index: 10;
+      backdrop-filter: blur(5px);
     }
 
     .nav {
@@ -74,73 +81,92 @@
 
     .nav-logo {
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
     }
 
     .nav-links {
       display: flex;
-      gap: 0.75rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
 
     .nav-link {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       padding: 0.25rem 0.5rem;
+      color: #e5e7eb;
     }
 
     footer {
       text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.85rem;
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
       color: #94a3b8;
+      border-top: 1px solid #3d3028;
     }
     /* CSS:BASE-END */
 
     /* CSS:HERO-START */
     .section-hero {
-      background: linear-gradient(180deg, #020617, #0f172a);
+      background: linear-gradient(180deg, #2d241e, #1a1512);
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
     }
 
     .hero-content {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .hero-title {
-      font-size: 2rem;
-      margin: 0;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: #d1d5db;
+      margin-bottom: 1.5rem;
     }
 
     .hero-image {
-      border-radius: 0.5rem;
-      overflow: hidden;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
     }
     /* CSS:HERO-END */
 
     /* CSS:ABOUT-START */
-    .section-about {
-      background-color: #020617;
-    }
+    .section-about { background-color: #241d19; }
+    .highlight { color: #fbbf24; font-weight: bold; }
     /* CSS:ABOUT-END */
 
     /* CSS:SKILLS-START */
-    .section-skills {
-      background-color: #0f172a;
+    .section-skills { background-color: #1a1512; }
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .skill-card {
+      background: #2d241e;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
     }
     /* CSS:SKILLS-END */
 
     /* CSS:PROJECTS-START */
-    .section-projects {
-      background-color: #020617;
+    .section-projects { background-color: #241d19; }
+    .project-memo {
+      background: #1a1512;
+      padding: 2rem;
+      border-radius: 15px;
+      border: 1px dashed #fbbf24;
     }
     /* CSS:PROJECTS-END */
-
-    /* CSS:CONTACT-START */
-    .section-contact {
-      background-color: #0f172a;
-    }
-    /* CSS:CONTACT-END */
 
     /* CSS:RWD-START */
     @media (min-width: 768px) {
@@ -148,15 +174,8 @@
         flex-direction: row;
         align-items: center;
       }
-
-      .hero-text,
-      .hero-image {
-        flex: 1;
-      }
-
-      .nav-link {
-        font-size: 1rem;
-      }
+      .hero-text, .hero-image { flex: 1; }
+      .hero-title { font-size: 3.5rem; }
     }
     /* CSS:RWD-END */
   </style>
@@ -167,89 +186,82 @@
 
     <header class="site-header">
       <div class="container nav">
-        <div class="nav-logo">YuHsiu Dev · Frontend</div>
+        <div class="nav-logo">Memory of Mimi 🐾</div>
         <nav class="nav-links">
           <a href="#hero" class="nav-link">首頁</a>
-          <a href="#about" class="nav-link">關於我</a>
-          <a href="#skills" class="nav-link">技能</a>
-          <a href="#projects" class="nav-link">作品集</a>
-          <a href="#contact" class="nav-link">聯絡我</a>
+          <a href="#about" class="nav-link">關於咪咪</a>
+          <a href="#traits" class="nav-link">她的個性</a>
+          <a href="#family" class="nav-link">咪咪家譜</a>
+          <a href="#contact" class="nav-link">留個言</a>
         </nav>
       </div>
     </header>
 
     <main>
 
-      <!-- SECTION:HERO-START -->
       <section id="hero" class="section section-hero">
         <div class="container hero-content">
-          
           <div class="hero-text">
-            <h1 class="hero-title">這裡是個人品牌網站的主視覺區（Hero）</h1>
-            <p>這裡之後會放一段簡短的一句話自我介紹，以及核心職稱（例如 Frontend Developer），並加入引導使用者瀏覽作品或聯絡我的行動呼籲。</p>
-            <p>目前為占位內容，之後會透過 Section SDD 的 Prompt 產生完整文案與設計。</p>
-            <p>提示：之後會用 Section SDD 的 Prompt 產生正式文案與版面，再把整個 section 貼回來取代這一區。</p>
+            <h1 class="hero-title">咪咪</h1>
+            <p class="hero-subtitle">最美麗的米克斯女孩，我們永遠的小天使。</p>
+            <p>即使妳回到了星貓雲端，妳留下的愛與那偶爾的一口「咬疼」，永遠是我們最珍貴的回憶。</p>
           </div>
-
           <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="在筆電前撰寫程式碼的前端開發者" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="可愛的米克斯貓咪示意圖" loading="lazy">
           </div>
-
         </div>
       </section>
-      <!-- SECTION:HERO-END -->
-
-      <!-- SECTION:ABOUT-START -->
-      <section id="about" class="section section-about" aria-labelledby="about-heading">
+      <section id="about" class="section section-about">
         <div class="container">
-          <h2 id="about-heading" class="section-title">關於我（之後會用 Section SDD 替換）</h2>
-          <p>這裡目前是 About 區的占位內容，未來會放入個人背景、經歷與專長介紹。</p>
-          <p>之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。</p>
+          <h2 class="section-title">關於她</h2>
+          <p>咪咪是一隻獨一無二的<span class="highlight">米克斯女孩</span>。她擁有著最靈動的眼神和極其優雅的坐姿。雖然身為流浪過的孩子，但她卻活得比誰都像公主。</p>
+          <p>在她的生命中，她曾是一位英勇且慈愛的母親，在艱難的環境下順利誕生並撫育了<span class="highlight">5 隻可愛的小貓</span>，看著孩子們長大是她最偉大的成就。</p>
         </div>
       </section>
-      <!-- SECTION:ABOUT-END -->
-
-      <!-- SECTION:SKILLS-START -->
-      <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
+      <section id="traits" class="section section-skills">
         <div class="container">
-          <h2 id="skills-heading" class="section-title">技能（之後會用 Section SDD 替換）</h2>
-          <p>這裡目前是 Skills 區的占位內容，未來會展示技術技能、工具與熟悉的開發領域。</p>
-          <p>之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。</p>
+          <h2 class="section-title">獨特的個性</h2>
+          <p>咪咪不是那種隨便就能摸的貓，她有她的驕傲：</p>
+          <div class="skill-grid">
+            <div class="skill-card">
+              <h3>愛咬人的小傲嬌</h3>
+              <p>那是她表達愛的一種方式，雖然有時候真的有點痛。</p>
+            </div>
+            <div class="skill-card">
+              <h3>最強母性</h3>
+              <p>獨自照顧 5 隻搗蛋鬼，從不喊累。</p>
+            </div>
+            <div class="skill-card">
+              <h3>米克斯之美</h3>
+              <p>混血的毛色與堅毅的眼神，是她最美的勳章。</p>
+            </div>
+          </div>
         </div>
       </section>
-      <!-- SECTION:SKILLS-END -->
-
-      <!-- SECTION:PROJECTS-START -->
-      <section id="projects" class="section section-projects" aria-labelledby="projects-heading">
+      <section id="family" class="section section-projects">
         <div class="container">
-          <h2 id="projects-heading" class="section-title">作品集（之後會用 Section SDD 替換）</h2>
-          <p>這裡目前是 Projects 區的占位內容，未來會放入專案案例、作品展示與相關說明。</p>
-          <p>之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。</p>
+          <h2 class="section-title">咪咪與五個寶貝</h2>
+          <div class="project-memo">
+            <p>咪咪生的五隻小貓，現在都已經在溫暖的家平安長大了。她把所有的溫柔都給了孩子，把所有的堅強都留給了自己。</p>
+            <p>即便後來因為生病而不得不離開我們，但她的基因與靈魂，依然透過那五對閃亮的小眼睛，在這個世界上繼續閃耀著。</p>
+          </div>
         </div>
       </section>
-      <!-- SECTION:PROJECTS-END -->
-
-      <!-- SECTION:CONTACT-START -->
-      <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
+      <section id="contact" class="section section-contact">
         <div class="container">
-          <h2 id="contact-heading" class="section-title">聯絡我（之後會用 Section SDD 替換）</h2>
-          <p>這裡目前是 Contact 區的占位內容，未來會提供 Email、電話與社群連結。</p>
-          <p>之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。</p>
-
+          <h2 class="section-title">永遠懷念</h2>
+          <p>如果你也曾被咪咪「寵幸」過（指被咬一口），歡迎在心裡默默跟她打個招呼。</p>
           <p>
-            Email：<a href="mailto:hello@example.com">hello@example.com</a><br>
-            電話：<a href="tel:+886900000000">+886 900 000 000</a><br>
-            GitHub：<a href="https://github.com/yourname">github.com/yourname</a><br>
-            LinkedIn：<a href="https://www.linkedin.com/in/yourname">linkedin.com/in/yourname</a>
+            紀念日：2026年 某月某日<br>
+            棲息地：彩虹橋那端的溫暖沙發<br>
+            最愛的食物：罐罐與你的手指頭
           </p>
         </div>
       </section>
-      <!-- SECTION:CONTACT-END -->
-
-    </main>
+      </main>
 
     <footer>
-      <p>© 2026 YuHsiu Dev · Frontend Developer. All rights reserved.</p>
+      <p>© 2026 Forever Mimi · 獻給最勇敢的貓媽媽</p>
     </footer>
 
   </div>
