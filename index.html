@@ -17,9 +17,13 @@
     body {
       margin: 0;
       font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", system-ui, sans-serif;
-      line-height: 1.6;
-      background-color: #1a1512; /* 深咖啡色調，比原來的藍黑色更溫暖 */
-      color: #f3f4f6;
+      line-height: 1.8;
+      /* 改為溫馨的奶油色背景 */
+      background-color: #fdfaf5;
+      /* 文字改為暖灰色，更柔和 */
+      color: #5a4f44;
+      /* 加入極淡的貓爪印花圖案作為全站背景 */
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48ZyBmaWxsPSIjZjRlYWQ5IiBmaWxsLW9wYWNpdHk9IjAuNSI+PHBhdGggZD0iTTAgMGg0MHY0MEgwVjB6bTIwIDIwSDB2MjBoMjBWMjB6TTAgMGgyMHYyMEgwVjB6bTIwIDBoMjB2MjBIMjBWMHpNMjAgMjBoMjB2MjBIMjBWMjB6Ii8+PC9nPjwvc3ZnPg==');
     }
 
     .page {
@@ -29,7 +33,7 @@
 
     .container {
       width: 100%;
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 1.5rem 1rem;
     }
@@ -38,37 +42,60 @@
       max-width: 100%;
       height: auto;
       display: block;
-      border-radius: 12px;
+      border-radius: 20px; /* 更圓潤的角 */
+      box-shadow: 0 10px 20px rgba(90, 79, 68, 0.1); /* 柔和的陰影 */
     }
 
     a {
-      color: #fbbf24; /* 暖金色，象徵貓咪的眼睛 */
+      /* 改為溫暖的肉桂橘色 */
+      color: #d87c4f;
       text-decoration: none;
       transition: 0.3s;
+      font-weight: 500;
     }
 
     a:hover {
-      color: #f59e0b;
+      color: #b36239;
       text-decoration: underline;
     }
 
     .section {
-      padding: 4rem 0;
+      padding: 5rem 0; /* 增加上下留白，更舒服 */
     }
 
     .section-title {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: #fbbf24;
-      border-left: 4px solid #fbbf24;
-      padding-left: 1rem;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      color: #7c6c5a;
+      text-align: center; /* 標題居中 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* 在標題前後加入可愛的貓咪剪影圖示 */
+    .section-title::before,
+    .section-title::after {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.7;
+    }
+
+    .section-title::before {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjN2M2YzVhIiBkPSJNMTggMjJDMTcuNDUgMjIgMTcgMjEuNTUgMTcgMjFUMTcuNDUgMjBIMThDMjAuMjEgMjAgMjIgMTguMjEgMjIgMTYuMTZDMjIgMTMuMjIgMTguNTMgMTIgMTUuMjggMTJDMTQuMTkgMTIgMTMuMTQgMTIuNTUgMTIuMzcgMTMuMzRMMTIgMTMuNzNMMTEuNjMgMTMuMzRDMTAuODYgMTIuNTUgOS44MSAxMiA4LjcyIDEyQzUuNDcgMTIgMiAxMy4yMiAyIDE2LjE2QzIgMTguMjEgMy43OSAyMCA2IDIwSDYuNTVDNyAxOC44NSA4IDE4IDkuMjQgMThIOEM2LjM0IDE4IDQuNDEgMTYuODYgNC40MSAxNS4xMkM0LjQxIDEzLjgxIDUuODIgMTMuNTUgOC43MiAxMy41NUM5LjQ3IDEzLjU1IDEwLjE4IDEzLjgzIDEwLjcxIDE0LjM4TDEyIDE1LjY4TDEzLjI5IDE0LjM4QzEzLjgyIDEzLjgzIDE0LjUzIDEzLjU1IDE1LjI4IDEzLjU1QzE4LjE4IDEzLjU1IDE5LjU5IDEzLjgxIDE5LjU5IDE1LjEyQzE5LjU5IDE2Ljg2IDE3LjY2IDE4IDE2IDE4SDE1LjUzQzE2IDE4Ljg1IDE3IDE5LjcyIDE4IDIwLjUyQzE5Ljk0IDIwLjE2IDIwLjg1IDE5LjI2IDIxLjUyIDE4LjkxQzIxLjc4IDE4Ljc4IDIyLjEgMTguODIgMjIuMzQgMTkuMDZDMjIuNTYgMTkuMjggMjIuNjQgMTkuNiAyMi41IDE5Ljg5QzIxLjk3IDIxLjE2IDIwLjUgMjIgMTggMjJaTTIuMjIgNy4zOUMyLjA3IDYuODEgMi4zNiA2LjIgMi45NCA2LjA2TDUuMjQgNS40OUM1LjU2IDUuNDEgNS44OSA1LjU0IDYuMDggNS44MUw3LjI2IDcuNTFDMTAuMTEgNS42MyAxMy44OSA1LjYzIDE2Ljc0IDcuNTFMMTcuOTIgNS44MUMxOC4xMSA1LjU0IDE4LjQ0IDUuNDEgMTguNzYgNS40OUwyMS4wNiA2LjA2QzIxLjY0IDYuMiAyMS45MyA2LjgxIDIxLjc4IDcuMzlMMjAuODIgMTAuOTVMMjEuNTQgMTEuNjdDMjIuMDkgMTIuMjIgMjIuMTIgMTMuMTQgMjEuNjEgMTMuNzZMMjEuMTkgMTQuMjlDMjAuNzcgMTQuODMgMTkuOTMgMTQuODkgMTkuMzQgMTQuNDNMMTggMTMuMzZMMTYuNjUgMTQuNDNDMTYuMDcgMTQuODkgMTUuMjMgMTQuODMgMTQuODEgMTQuMjlMMTQuMzkgMTMuNzZDMTMuODggMTMuMTQgMTMuOTEgMTIuMjIgMTQuNDYgMTEuNjdMMTUuMTggMTAuOTVMMTQuOTkgMTAuNzJDMTMuMzEgMTEuNzIgMTEuNjQgMTEuNzIgMTAuMDEgMTAuNzJMMTAuNjYgMTEuNzZDMTEuMTggMTIuMjQgMTEuMTggMTMuMDYgMTAuNjYgMTMuNTVMMTAuMTggMTQuMDRDOS43MSAxNC41MyA5IDE0LjU5IDguNDIgMTQuMTlMMTcgMTguNDYgMTEuMjRMMTEuNTggMTguNDZDMTTEgMTQuMTkgMTAuMjkgMTQuNTMgOS44MiAxNC4wNEw5LjI0IDEzLjczQzguNjcgMTMuMTYgOC43NiAxMi4yOCA5LjMyIDExLjY3TDEwLjIzIDEwLjk1TDEwLjE5IDEwLjg2QzkuMjQgMTEuMzMgOC4yNCAxMS41NiA3LjIzIDExLjU2QzUuODUgMTEuNTYgNC41NCAxMS4wNSA5LjI5IDcuMzlaIi8+PC9zdmc+');
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      background-color: rgba(26, 21, 18, 0.95);
-      border-bottom: 1px solid #3d3028;
+      /* 改為半透明奶油色 */
+      background-color: rgba(253, 250, 245, 0.95);
+      border-bottom: 2px solid #f4ead9; /* 圓潤的線條 */
       z-index: 10;
       backdrop-filter: blur(5px);
     }
@@ -77,105 +104,144 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem;
     }
 
     .nav-logo {
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       letter-spacing: 1px;
+      color: #7c6c5a;
     }
 
     .nav-links {
       display: flex;
-      gap: 1rem;
+      gap: 0.5rem;
       flex-wrap: wrap;
     }
 
     .nav-link {
       font-size: 0.95rem;
-      padding: 0.25rem 0.5rem;
-      color: #e5e7eb;
+      padding: 0.5rem 1rem;
+      color: #7c6c5a;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #f4ead9; /* 滑過時有泡泡感 */
+      text-decoration: none;
+      color: #b36239;
     }
 
     footer {
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
       font-size: 0.9rem;
-      color: #94a3b8;
-      border-top: 1px solid #3d3028;
+      color: #9c8c7c;
+      /* 頁尾加上淡淡的粉色漸層 */
+      background: linear-gradient(180deg, rgba(253, 250, 245, 0) 0%, #fff1f1 100%);
+      border-top: 2px solid #f4ead9;
     }
     /* CSS:BASE-END */
 
     /* CSS:HERO-START */
     .section-hero {
-      background: linear-gradient(180deg, #2d241e, #1a1512);
-      min-height: 60vh;
+      /* Hero 區使用淡淡的粉色漸層 */
+      background: linear-gradient(180deg, #fff1f1 0%, #fdfaf5 100%);
+      min-height: 70vh;
       display: flex;
       align-items: center;
     }
 
     .hero-content {
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
+      flex-direction: column-reverse; /* 筆電上圖片在右，手機上圖片在上的可愛排版 */
+      gap: 3rem;
+      text-align: center;
     }
 
     .hero-title {
-      font-size: 2.8rem;
+      font-size: 3.5rem;
       margin-bottom: 0.5rem;
       line-height: 1.2;
+      color: #5a4f44;
+      font-weight: 900;
     }
 
     .hero-subtitle {
-      font-size: 1.2rem;
-      color: #d1d5db;
-      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      color: #7c6c5a;
+      margin-bottom: 2rem;
+      font-weight: 400;
     }
 
-    .hero-image {
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    .hero-text p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image img {
+      /* 讓圖片看起來像拍立得照片 */
+      border: 10px solid white;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      transform: rotate(-2deg); /* 微微傾斜更可愛 */
     }
     /* CSS:HERO-END */
 
     /* CSS:ABOUT-START */
-    .section-about { background-color: #241d19; }
-    .highlight { color: #fbbf24; font-weight: bold; }
+    /* About 區塊使用微微的粉色背景 */
+    .section-about { background-color: #fff8f8; }
+    .highlight { color: #d87c4f; font-weight: bold; background-color: #fef0e7; padding: 2px 6px; border-radius: 4px; }
     /* CSS:ABOUT-END */
 
     /* CSS:SKILLS-START */
-    .section-skills { background-color: #1a1512; }
+    .section-skills { background-color: #fdfaf5; }
     .skill-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
     .skill-card {
-      background: #2d241e;
-      padding: 1.5rem;
-      border-radius: 8px;
+      /* 像雲朵一樣的卡片 */
+      background: white;
+      padding: 2rem;
+      border-radius: 30px;
       text-align: center;
+      box-shadow: 0 10px 20px rgba(90, 79, 68, 0.05);
+      border: 1px solid #f4ead9;
+    }
+    .skill-card h3 {
+        color: #d87c4f;
+        margin-top: 0;
     }
     /* CSS:SKILLS-END */
 
     /* CSS:PROJECTS-START */
-    .section-projects { background-color: #241d19; }
+    .section-projects { background-color: #fff8f8; }
     .project-memo {
-      background: #1a1512;
-      padding: 2rem;
-      border-radius: 15px;
-      border: 1px dashed #fbbf24;
+      /* 溫柔的備忘錄風格 */
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      border-left: 5px solid #ffcccc; /* 粉色邊條 */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
     }
     /* CSS:PROJECTS-END */
 
     /* CSS:RWD-START */
     @media (min-width: 768px) {
       .hero-content {
-        flex-direction: row;
-        align-items: center;
+        flex-direction: row; /* 筆電上恢復左右排版 */
+        text-align: left;
       }
       .hero-text, .hero-image { flex: 1; }
-      .hero-title { font-size: 3.5rem; }
+      .hero-title { font-size: 4.5rem; }
+      .hero-text p { margin-left: 0; }
+      .section-title { font-size: 2.8rem; }
     }
     /* CSS:RWD-END */
   </style>
@@ -186,7 +252,7 @@
 
     <header class="site-header">
       <div class="container nav">
-        <div class="nav-logo">Memory of Mimi 🐾</div>
+        <div class="nav-logo">Mimi's Cozy Corner 🐾</div>
         <nav class="nav-links">
           <a href="#hero" class="nav-link">首頁</a>
           <a href="#about" class="nav-link">關於咪咪</a>
@@ -204,10 +270,10 @@
           <div class="hero-text">
             <h1 class="hero-title">咪咪</h1>
             <p class="hero-subtitle">最美麗的米克斯女孩，我們永遠的小天使。</p>
-            <p>即使妳回到了星貓雲端，妳留下的愛與那偶爾的一口「咬疼」，永遠是我們最珍貴的回憶。</p>
+            <p>即使妳回到了星貓雲端，妳留下的愛與那偶爾的一口「咬疼」，永遠是我們最珍貴的回憶。🐾</p>
           </div>
           <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="可愛的米克斯貓咪示意圖" loading="lazy">
+            <img src="./img/20250524_035904703_iOS.jpg" alt="可愛的米克斯貓咪示意圖" loading="lazy">
           </div>
         </div>
       </section>
@@ -221,19 +287,19 @@
       <section id="traits" class="section section-skills">
         <div class="container">
           <h2 class="section-title">獨特的個性</h2>
-          <p>咪咪不是那種隨便就能摸的貓，她有她的驕傲：</p>
+          <p style="text-align: center;">咪咪不是那種隨便就能摸的貓，她有她的驕傲：</p>
           <div class="skill-grid">
             <div class="skill-card">
               <h3>愛咬人的小傲嬌</h3>
-              <p>那是她表達愛的一種方式，雖然有時候真的有點痛。</p>
+              <p>那是她表達愛的一種方式，雖然有時候真的有點痛。🦷</p>
             </div>
             <div class="skill-card">
               <h3>最強母性</h3>
-              <p>獨自照顧 5 隻搗蛋鬼，從不喊累。</p>
+              <p>獨自照顧 5 隻搗蛋鬼，從不喊累。👩‍👧‍👦</p>
             </div>
             <div class="skill-card">
               <h3>米克斯之美</h3>
-              <p>混血的毛色與堅毅的眼神，是她最美的勳章。</p>
+              <p>混血的毛色與堅毅的眼神，是她最美的勳章。✨</p>
             </div>
           </div>
         </div>
@@ -243,25 +309,29 @@
           <h2 class="section-title">咪咪與五個寶貝</h2>
           <div class="project-memo">
             <p>咪咪生的五隻小貓，現在都已經在溫暖的家平安長大了。她把所有的溫柔都給了孩子，把所有的堅強都留給了自己。</p>
-            <p>即便後來因為生病而不得不離開我們，但她的基因與靈魂，依然透過那五對閃亮的小眼睛，在這個世界上繼續閃耀著。</p>
+            <p>即便後來因為生病而不得不離開我們，但她的基因與靈魂，依然透過那五對閃亮的小眼睛，在這個世界上繼續閃耀著。💖</p>
+            <img src="./img/20250524_035520425_iOS.jpg" alt="咪咪" loading="lazy">
           </div>
         </div>
       </section>
       <section id="contact" class="section section-contact">
-        <div class="container">
+        <div class="container" style="text-align: center;">
           <h2 class="section-title">永遠懷念</h2>
           <p>如果你也曾被咪咪「寵幸」過（指被咬一口），歡迎在心裡默默跟她打個招呼。</p>
-          <p>
-            紀念日：2026年 某月某日<br>
-            棲息地：彩虹橋那端的溫暖沙發<br>
-            最愛的食物：罐罐與你的手指頭
-          </p>
+          <div style="background: white; display: inline-block; padding: 2rem; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.03); border: 1px solid #f4ead9; margin-top: 1rem;">
+            <p style="margin: 0;">
+              <strong>紀念日：</strong> 2025年5月21日<br>
+              <strong>棲息地：</strong> 在陽台的白水木🛋️<br>
+              <strong>最愛的食物：</strong> 罐罐與我的腿😋
+            </p>
+            <img src="./img/20250628_010349184_iOS.jpg" alt="咪咪樹" loading="lazy">
+          </div>
         </div>
       </section>
       </main>
 
     <footer>
-      <p>© 2026 Forever Mimi · 獻給最勇敢的貓媽媽</p>
+      <p>© 2026 Forever Mimi · 獻給最勇敢的貓媽媽 · Memory Corner</p>
     </footer>
 
   </div>
